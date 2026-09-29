@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Speed Fox Delivery | Shipment Tracking</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef2f7; color: #333; margin: 0; padding: 40px 20px; }
+        .container { max-width: 650px; margin: 0 auto; background: #fff; padding: 35px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); }
+        .header { text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px; margin-bottom: 20px; }
+        .header h1 { color: #d9534f; margin: 0; font-size: 26px; }
+        .status-badge { display: inline-block; background: #fff3cd; color: #856404; padding: 6px 12px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+        .route-box { background: #f8f9fa; border-left: 4px solid #d9534f; padding: 15px 20px; border-radius: 6px; margin: 20px 0; }
+        .route-box p { margin: 8px 0; font-size: 15px; }
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .detail-item { background: #fafbfc; padding: 12px 15px; border-radius: 6px; border: 1px solid #e1e4e8; }
+        .detail-item span { display: block; font-size: 12px; color: #586069; text-transform: uppercase; margin-bottom: 4px; }
+        .detail-item strong { font-size: 15px; color: #24292e; }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>{{ parcel.company_name }}</h1>
+            <p>Tracking Number: <strong>{{ parcel.tracking_number }}</strong></p>
+        </div>
+        <div style='text-align: center;'>
+            <div class='status-badge'>Status: {{ parcel.status }}</div>
+        </div>
+        <div class='route-box'>
+            <p><strong>From (Origin):</strong> {{ parcel.origin }}</p>
+            <p><strong>To (Destination):</strong> {{ parcel.destination }}</p>
+        </div>
+        <div class='details-grid'>
+            <div class='detail-item'>
+                <span>Carrier Service</span>
+                <strong>{{ parcel.carrier }}</strong>
+            </div>
+            <div class='detail-item'>
+                <span>Estimated Delivery</span>
+                <strong>{{ parcel.estimated_delivery }}</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
